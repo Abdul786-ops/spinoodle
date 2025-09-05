@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en" data-site="spinoodle" data-page="disclaimer">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer - Spinoodle Social Entertainment Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌀</text></svg>">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/orientation_utils.css" type="text/css">
+    <link rel="stylesheet" href="css/ios_fullscreen.css" type="text/css">
+    <style>
+        
+        :root {
+            --primary-color: #FF6B35;
+            --secondary-color: #FF9E35;
+            --accent-color: #4ECDC4;
+            --dark-bg: #121726;
+            --card-bg: #1C233F;
+            --text-light: #F5F7FF;
+            --text-muted: #8C9AD0;
+            --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--accent-color) 0%, #6A8CFF 100%);
+            --header-height: 80px;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            min-height: 100vh;
+            padding-top: var(--header-height);
+            margin: 0;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* Header Design */
+        .header-spinoodle {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: rgba(18, 23, 38, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+            padding: 0 2rem;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo-spinoodle {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        
+        .logo-spinoodle span {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .logo-icon {
+            background: var(--gradient);
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 1.5rem;
+            transform: rotate(15deg);
+        }
+        
+        .nav-spinoodle {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-link-spinoodle {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link-spinoodle:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+            transition: width 0.3s ease;
+            border-radius: 3px;
+        }
+        
+        .nav-link-spinoodle:hover {
+            color: var(--accent-color);
+        }
+        
+        .nav-link-spinoodle:hover:after {
+            width: 100%;
+        }
+        
+        .nav-link-spinoodle.active {
+            color: var(--accent-color);
+        }
+        
+        .nav-link-spinoodle.active:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Page content */
+        .page-content {
+            padding: 40px 0;
+        }
+        
+        .section-title-spinoodle {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .section-title-spinoodle:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        /* Game container */
+        .entertainment-iframe-container {
+            background-color: var(--card-bg);
+            border-radius: 25px;
+            padding: 2.5rem;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .entertainment-iframe-container:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+        
+        .entertainment-iframe-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .entertainment-container {
+            position: relative;
+            width: 100%;
+            height: 370px;
+            overflow: hidden;
+            border-radius: 15px;
+            background: #0a0f1c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Content cards */
+        .content-card-spinoodle {
+            background-color: var(--card-bg);
+            border-radius: 25px;
+            padding: 2.5rem 2rem;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+            height: auto;
+            position: relative;
+        }
+        
+        .content-card-spinoodle:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-accent);
+        }
+        
+        .content-card-spinoodle:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .content-card-spinoodle h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Alert styling */
+        .alert {
+            border-radius: 16px;
+            border: none;
+            padding: 1.5rem;
+        }
+        
+        .alert-warning {
+            background: var(--gradient-accent);
+            color: white;
+        }
+        
+        .alert-dark {
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--text-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Buttons */
+        .btn-primary-spinoodle {
+            background: var(--gradient);
+            border: none;
+            border-radius: 50px;
+            padding: 14px 32px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary-spinoodle:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+        }
+        
+        .btn-accent-spinoodle {
+            background: var(--gradient-accent);
+            border: none;
+            border-radius: 50px;
+            padding: 14px 32px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-accent-spinoodle:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(78, 205, 196, 0.4);
+        }
+        
+        .btn-sm {
+            padding: 8px 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* List styling */
+        ul {
+            padding-left: 1.2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        /* Game canvas styling */
+        #canvas {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover;
+            top: 0px !important;
+            left: 0px !important;
+        }
+        
+        #entertainment-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .orientation-msg-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .orientation-msg-text {
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .check-fonts {
+            position: absolute;
+            left: -1000px;
+            top: -1000px;
+        }
+        
+        /* Loading spinner */
+        .entertainment-loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 15, 28, 0.8);
+            z-index: 10;
+            border-radius: 15px;
+        }
+        
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            color: var(--accent-color);
+        }
+        
+        /* Footer Design */
+        .footer-spinoodle {
+            background: linear-gradient(135deg, #080c14 0%, #0b101b 100%);
+            padding: 4rem 0 2rem;
+            color: var(--text-light);
+            position: relative;
+            border-top: 1px solid rgba(255, 107, 53, 0.2);
+        }
+        
+        .footer-spinoodle:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--gradient);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-logo span {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .footer-tagline {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .footer-notice {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        .footer-legal {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .footer-link:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright-spinoodle {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            color: var(--text-muted);
+        }
+        
+        .responsible-entertainment {
+            margin-top: 2rem;
+        }
+        
+        .responsible-entertainment h5 {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+        
+        .responsible-logos {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .responsible-logos img {
+            max-height: 30px;
+            border-radius: 5px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .nav-spinoodle {
+                display: none;
+                position: absolute;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background: var(--dark-bg);
+                flex-direction: column;
+                padding: 1rem 0;
+                border-top: 1px solid rgba(255, 107, 53, 0.2);
+            }
+            
+            .nav-spinoodle.active {
+                display: flex;
+            }
+            
+            .nav-link-spinoodle {
+                padding: 1rem 2rem;
+                width: 100%;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-content {
+                padding: 20px 0;
+            }
+            
+            .section-title-spinoodle {
+                font-size: 2.2rem;
+            }
+            
+            .entertainment-container {
+                height: 300px;
+            }
+            
+            .content-card-spinoodle {
+                padding: 1.5rem;
+            }
+            
+            .entertainment-iframe-container {
+                padding: 1.5rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .entertainment-container {
+                height: 250px;
+            }
+            
+            .header-spinoodle {
+                padding: 0 1rem;
+            }
+            
+            .logo-spinoodle {
+                font-size: 1.5rem;
+            }
+            
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body ondragstart="return false;" ondrop="return false;">
+    <!-- Header -->
+    <header class="header-spinoodle">
+        <div class="header-container">
+            <a href="index.html" class="logo-spinoodle">
+                <div class="logo-icon">
+                    <i class="fas fa-compass"></i>
+                </div>
+                Spin<span>oodle</span>
+            </a>
+            
+            <nav class="nav-spinoodle">
+                <a href="index.html" class="nav-link-spinoodle">Home</a>
+                <a href="play.html" class="nav-link-spinoodle">Entertainment</a>
+                <a href="disclaimer.html" class="nav-link-spinoodle active">Disclaimer</a>
+                <a href="terms.html" class="nav-link-spinoodle">Terms</a>
+                <a href="privacy.html" class="nav-link-spinoodle">Privacy</a>
+            </nav>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Disclaimer Page Content -->
+    <div class="page-content">
+        <div class="container">
+            <h2 class="text-center section-title-spinoodle">Disclaimer</h2>
+            <div class="content-card-spinoodle mt-4">
+                <h3 class="mb-3">General Disclaimer</h3>
+                <p>All content provided on Spinoodle is for entertainment purposes only. By accessing and using this platform, you acknowledge that Spinoodle does not provide financial, legal, or professional advice. Participation is strictly for amusement and social engagement.</p>
+            </div>
+
+            <div class="content-card-spinoodle mt-4">
+                <h3 class="mb-3">No Real Money Involved</h3>
+                <p>All games, activities, and experiences offered on Spinoodle are purely virtual. No real money, winnings, or monetary transactions occur on the platform. Any virtual points, coins, or rewards are not redeemable for cash or any financial value.</p>
+            </div>
+
+            <div class="content-card-spinoodle mt-4">
+                <h3 class="mb-3">Age Restriction</h3>
+                <p>Spinoodle is intended for users aged 18 years and above. By using this platform, you confirm that you meet the minimum age requirement. Spinoodle is not responsible for any use by minors or users under the required age.</p>
+            </div>
+
+            <div class="content-card-spinoodle mt-4">
+                <h3 class="mb-3">Limitation of Liability</h3>
+                <p>Spinoodle and its affiliates shall not be held liable for any loss, damage, or inconvenience arising from participation in social entertainment activities. Users participate at their own discretion and acknowledge that all content is provided “as-is.”</p>
+            </div>
+
+            <div class="content-card-spinoodle mt-4">
+                <h3 class="mb-3">Third-Party Links</h3>
+                <p>Spinoodle may provide links to external websites for informational purposes. We are not responsible for the content, accuracy, or policies of third-party websites. Users are advised to review the terms and policies of any external sites they visit.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-spinoodle">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    Spin<span>oodle</span>
+                </div>
+                <p class="footer-tagline">
+                    The premier destination for interactive social entertainment. Enjoy responsibly for amusement only.
+                </p>
+
+                 <div class="footer-notice">
+                   <p class="mb-0"><strong>Important Notice:</strong> Spinoodle is designed for users aged 18 and over. All activities on the platform are purely for entertainment and free to play. No real money is involved—there are no bets, winnings, or any transactions using actual currency.</p>
+                 </div>
+
+                <div class="responsible-entertainment">
+                    <h5>Responsible Entertainment</h5>
+                    <div class="responsible-logos">
+                        <a href="https://www.gamblingtherapy.org/" target="_blank">
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='40' viewBox='0 0 100 40'><rect width='100' height='40' fill='%23f8f9fa' rx='5'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='10' fill='%23121212'>Gambling Therapy</text></svg>" alt="Gambling Therapy">
+                        </a>
+                        <a href="https://www.gambleaware.org/" target="_blank">
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='40' viewBox='0 0 100 40'><rect width='100' height='40' fill='%23f8f9fa' rx='5'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='10' fill='%23121212'>GambleAware</text></svg>" alt="GambleAware">
+                        </a>
+                        <a href="https://www.gamstop.co.uk/" target="_blank">
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='40' viewBox='0 0 100 40'><rect width='100' height='40' fill='%23f8f9fa' rx='5'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='10' fill='%23121212'>GamStop</text></svg>" alt="GamStop">
+                        </a>
+                    </div>
+                </div> <br>
+                
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="play.html" class="footer-link">Entertainment</a>
+                    <a href="disclaimer.html" class="footer-link">Disclaimer</a>
+                    <a href="terms.html" class="footer-link">Terms & Conditions</a>
+                    <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                </div>
+                
+                <div class="footer-legal">
+                    <p class="copyright-spinoodle">
+                        &copy; 2025 Spinoodle. All rights reserved. This is a social entertainment website for enjoyment purposes only. No financial transactions are involved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
